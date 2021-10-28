@@ -16,3 +16,11 @@ Feature: Poster une image et un vidéo
     And Je telecharge l'image en cliquant sur le boutton Upload Images "C:\Users\emnag\OneDrive\Bureau\workspace eclipse\MyProject\src\test\resources\images\Selenium.jpeg"
     And Je clique sur le boutton Post
     Then Je vérifie que l'image est importée et que le message a été soumis "Hello World!"
+
+@buzzvideo
+  Scenario: Partager un video dans la section buzz
+    When Je clique sur le menu Buzz
+    And Je clique sur l'onglet share video
+    When Je saisie l'url dans createVideo_content  "https://youtu.be/LUri5A2CGQ0"
+    And Je clique sur le bouton save video
+    Then Je vérifie que le video a été partagé "https://youtu.be/LUri5A2CGQ0"

@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.tests.orangeProject.admin.pageObjects.Admin;
 import com.tests.utils.CommonMethods;
@@ -21,6 +23,7 @@ public class AdminStepDef {
     
     private Admin admin = new Admin();
     private CommonMethods commonMethods = new CommonMethods();
+   
     
     public AdminStepDef() {
     	driver= Setup.driver;
@@ -56,6 +59,7 @@ public class AdminStepDef {
     @Then("^Je me déconnecte du compte$")
     public void jeMeDéconnecteDuCompte() throws Throwable {
        admin.clickWelcome();
+       admin.clickLogoutBoutton(driver);
        admin.clickLogout();
     }
 			
